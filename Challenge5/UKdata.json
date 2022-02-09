@@ -1,0 +1,29 @@
+{
+    "Countries": [
+        {
+            "name": "England",
+            "capital": "London",
+            "sizeSqKm": 130279,
+            "population": 56286961
+        },
+        {
+            "name": "Wales",
+            "capital": "Cardiff",
+            "sizeSqKm": 20779,
+            "population": 3153000
+        },
+        {
+            "name": "Scotland",
+            "capital": "Edinburgh",
+            "sizeSqKm": 77933,
+            "population": 5463300
+        },
+        {
+            "name": "Northern Ireland",
+            "capital": "Belfast",
+            "sizeSqKm": 14130,
+            "population": 1900000
+        }
+        
+    ]
+}
