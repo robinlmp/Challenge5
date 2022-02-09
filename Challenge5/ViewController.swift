@@ -18,9 +18,27 @@ class ViewController: UITableViewController {
         title = "UK nations"
     }
     
+    func loadFile() {
+        let decoder = JSONDecoder()
+        
+        let path = Bundle.main.resourcePath!
+        
+        guard let url = URL(string: path)?.appendingPathComponent("UKdata") else { return }
+        
+        guard let data = try? Data(contentsOf: url) else { return }
+        
+        do {
+            countries = try decoder.decode([Country].self, from: data)
+        } catch {
+            
+        }
+        
+    }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        countries.count
-        return 1
+        countries.count
+//        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
