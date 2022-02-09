@@ -10,6 +10,8 @@ import UIKit
 private let reuseIdentifier = "DetailCell"
 
 class DetailViewController: UICollectionViewController {
+    
+    let text = "hello"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,7 @@ class DetailViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -37,20 +39,35 @@ class DetailViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DetailCell
+        
+        cell.layer.cornerRadius = 15
+        
+        
+//        cell.layer.borderWidth = 2
+        
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowOffset = .zero
+        cell.layer.shadowRadius = 10
+//        cell.layer.shouldRasterize = true
+        
     
         // Configure the cell
-    
+        
+        cell.detailLabel.text = text
+        
         return cell
     }
 

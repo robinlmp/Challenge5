@@ -11,4 +11,5 @@ class DetailCell: UICollectionViewCell {
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var detailImage: UIImageView!
     
+    
 }
