@@ -46,7 +46,7 @@ class DetailViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 1
+        return 3
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,21 +54,24 @@ class DetailViewController: UICollectionViewController {
         
         cell.layer.cornerRadius = 15
         
-        
-//        cell.layer.borderWidth = 2
-        
         cell.layer.masksToBounds = false
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.2
         cell.layer.shadowOffset = .zero
         cell.layer.shadowRadius = 10
-//        cell.layer.shouldRasterize = true
         
-    
-        // Configure the cell
         
-        cell.detailLabel.text = country?.capital
+        switch indexPath.row {
+        case 0:
+            cell.detailLabel.text = country?.capital
+        case 1:
+            cell.detailLabel.text = String("\(country?.sizeSqKm)")
+        case 2:
+            cell.detailLabel.text = String("\(country?.population)")
+        default: cell.detailLabel.text = country?.name
+        }
         
+
         return cell
     }
 
