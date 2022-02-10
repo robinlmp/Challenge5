@@ -48,11 +48,17 @@ class DetailViewController: UICollectionViewController {
         
         switch indexPath.row {
         case 0:
-            cell.detailLabel.text = country?.capital
+            cell.detailLabel.text = "Capital city: \(country?.capital ?? "")"
+            cell.detailLabel.textColor = UIColor.systemBackground
+            cell.layer.backgroundColor = UIColor.systemBlue.cgColor
         case 1:
-            cell.detailLabel.text = String("\(country?.sizeSqKm)")
+            cell.detailLabel.text = String("Area: \(country?.sizeSqKm ?? 0) km")
+            cell.detailLabel.textColor = UIColor.systemBackground
+            cell.layer.backgroundColor = UIColor.systemMint.cgColor
         case 2:
-            cell.detailLabel.text = String("\(country?.population)")
+            cell.detailLabel.text = String("Population: \(country?.population ?? 0)")
+            cell.detailLabel.textColor = UIColor.systemBackground
+            cell.layer.backgroundColor = UIColor.systemPink.cgColor
         default: cell.detailLabel.text = country?.name
         }
         
