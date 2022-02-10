@@ -48,15 +48,33 @@ class DetailViewController: UICollectionViewController {
         
         switch indexPath.row {
         case 0:
-            cell.detailLabel.text = "Capital city: \(country?.capital ?? "")"
+            cell.detailImage.image = UIImage(systemName: "building.2.crop.circle.fill")
+            cell.detailImage.tintColor = UIColor.systemBackground
+            
+            cell.detailTitle.text = "Capital city"
+            cell.detailTitle.textColor = UIColor.systemBackground
+            
+            cell.detailLabel.text = "\(country?.capital ?? "")"
             cell.detailLabel.textColor = UIColor.systemBackground
             cell.layer.backgroundColor = UIColor.systemBlue.cgColor
         case 1:
-            cell.detailLabel.text = String("Area: \(country?.sizeSqKm ?? 0) km")
+            cell.detailImage.image = UIImage(systemName: "map.circle.fill")
+            cell.detailImage.tintColor = UIColor.systemBackground
+            
+            cell.detailTitle.text = "Area"
+            cell.detailTitle.textColor = UIColor.systemBackground
+            
+            cell.detailLabel.text = String("\(country?.sizeSqKm ?? 0) km")
             cell.detailLabel.textColor = UIColor.systemBackground
             cell.layer.backgroundColor = UIColor.systemMint.cgColor
         case 2:
-            cell.detailLabel.text = String("Population: \(country?.population ?? 0)")
+            cell.detailImage.image = UIImage(systemName: "person.3.fill")
+            cell.detailImage.tintColor = UIColor.systemBackground
+            
+            cell.detailTitle.text = "Population"
+            cell.detailTitle.textColor = UIColor.systemBackground
+            
+            cell.detailLabel.text = String("\(country?.population ?? 0)")
             cell.detailLabel.textColor = UIColor.systemBackground
             cell.layer.backgroundColor = UIColor.systemPink.cgColor
         default: cell.detailLabel.text = country?.name

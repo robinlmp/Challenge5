@@ -75,8 +75,14 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDJ-SZ-NJa">
-                                            <rect key="frame" x="97" y="10" width="243" height="55"/>
+                                            <rect key="frame" x="97" y="33" width="243" height="32"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-Tf-vXe" userLabel="Detail Title">
+                                            <rect key="frame" x="97" y="8" width="243" height="35"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -84,17 +90,22 @@
                                     <constraints>
                                         <constraint firstItem="oL0-Wd-YE1" firstAttribute="centerY" secondItem="bVh-mZ-zwN" secondAttribute="centerY" id="3di-Nj-dZ2"/>
                                         <constraint firstItem="oL0-Wd-YE1" firstAttribute="bottom" secondItem="YDJ-SZ-NJa" secondAttribute="bottom" id="6NV-eZ-vSI"/>
+                                        <constraint firstItem="7i3-Tf-vXe" firstAttribute="trailing" secondItem="YDJ-SZ-NJa" secondAttribute="trailing" id="6eM-1a-sFo"/>
                                         <constraint firstAttribute="trailing" secondItem="YDJ-SZ-NJa" secondAttribute="trailing" id="9Bc-vV-M66"/>
                                         <constraint firstItem="oL0-Wd-YE1" firstAttribute="leading" secondItem="bVh-mZ-zwN" secondAttribute="leading" constant="16" id="FTR-5w-OXZ"/>
                                         <constraint firstItem="YDJ-SZ-NJa" firstAttribute="leading" secondItem="oL0-Wd-YE1" secondAttribute="trailing" constant="26" id="H2J-PQ-jf5"/>
-                                        <constraint firstItem="oL0-Wd-YE1" firstAttribute="top" secondItem="YDJ-SZ-NJa" secondAttribute="top" id="ICh-i7-Y2c"/>
+                                        <constraint firstItem="7i3-Tf-vXe" firstAttribute="leading" secondItem="YDJ-SZ-NJa" secondAttribute="leading" id="H5Q-Bf-DTa"/>
+                                        <constraint firstItem="oL0-Wd-YE1" firstAttribute="top" secondItem="YDJ-SZ-NJa" secondAttribute="top" constant="-23" id="ICh-i7-Y2c"/>
                                         <constraint firstItem="oL0-Wd-YE1" firstAttribute="top" secondItem="bVh-mZ-zwN" secondAttribute="top" constant="10" id="aNb-dW-RTN"/>
+                                        <constraint firstAttribute="bottom" secondItem="7i3-Tf-vXe" secondAttribute="bottom" constant="32" id="io6-eC-08R"/>
+                                        <constraint firstItem="7i3-Tf-vXe" firstAttribute="top" secondItem="bVh-mZ-zwN" secondAttribute="top" constant="8" id="qIv-gR-x1v"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="detailImage" destination="oL0-Wd-YE1" id="uKF-mP-TxQ"/>
                                     <outlet property="detailLabel" destination="YDJ-SZ-NJa" id="Dfj-Op-Ay6"/>
+                                    <outlet property="detailTitle" destination="7i3-Tf-vXe" id="TS0-Ub-U3K"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

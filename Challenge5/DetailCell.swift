@@ -8,6 +8,7 @@
 import UIKit
 
 class DetailCell: UICollectionViewCell {
+    @IBOutlet var detailTitle: UILabel!
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var detailImage: UIImageView!
 }
