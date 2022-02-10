@@ -16,47 +16,43 @@ class ViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "UK nations"
+        loadFile()
     }
     
     func loadFile() {
         let decoder = JSONDecoder()
-        
-        let path = Bundle.main.resourcePath!
-        
-        guard let url = URL(string: path)?.appendingPathComponent("UKdata") else { return }
-        
-        guard let data = try? Data(contentsOf: url) else { return }
+        guard let path = Bundle.main.url(forResource: "UKdata", withExtension: "json") else { return }
+        guard let data = try? Data(contentsOf: path) else { return }
         
         do {
             countries = try decoder.decode([Country].self, from: data)
         } catch {
-            
+            // handle with error
         }
         
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        countries.count
-//        return 1
+        print(countries.count)
+        return countries.count
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Country", for: indexPath)
         
-//        cell.textLabel?.text = countries[indexPath.row].name
-        cell.textLabel?.text = "hello"
+        cell.textLabel?.text = countries[indexPath.row].name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            // 2: success! Set its selectedImage property
-//            vc.selectedImage = pictures[indexPath.row]
-
-            // 3: now push it onto the navigation controller
             navigationController?.pushViewController(vc, animated: true)
+            
+            vc.country = countries[indexPath.row]
         }
+        
     }
 }
 

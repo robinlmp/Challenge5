@@ -11,7 +11,7 @@ private let reuseIdentifier = "DetailCell"
 
 class DetailViewController: UICollectionViewController {
     
-    let text = "hello"
+    var country: Country?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class DetailViewController: UICollectionViewController {
 
         // Register cell classes
         
-        title = "country name"
+        title = country?.name
 
         // Do any additional setup after loading the view.
     }
@@ -46,7 +46,7 @@ class DetailViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 11
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,7 +67,7 @@ class DetailViewController: UICollectionViewController {
     
         // Configure the cell
         
-        cell.detailLabel.text = text
+        cell.detailLabel.text = country?.capital
         
         return cell
     }
