@@ -64,7 +64,7 @@ class DetailViewController: UICollectionViewController {
             cell.detailTitle.text = "Area"
             cell.detailTitle.textColor = UIColor.systemBackground
             
-            cell.detailLabel.text = String("\(country?.sizeSqKm ?? 0) km")
+            cell.detailLabel.text = String("\(country?.sizeSqKm ?? 0) km²")
             cell.detailLabel.textColor = UIColor.systemBackground
             cell.layer.backgroundColor = UIColor.systemMint.cgColor
         case 2:
